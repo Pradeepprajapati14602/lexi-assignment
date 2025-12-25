@@ -1,0 +1,64 @@
+EMPLOYMENT OFFER LETTER
+
+Date: [OFFER_DATE]
+
+To,
+[CANDIDATE_NAME]
+[CANDIDATE_ADDRESS]
+Email: [CANDIDATE_EMAIL]
+Phone: [CANDIDATE_PHONE]
+
+Subject: Offer of Employment - [JOB_POSITION]
+
+Dear [CANDIDATE_NAME],
+
+We are pleased to offer you the position of [JOB_POSITION] at [COMPANY_NAME].
+
+EMPLOYMENT DETAILS:
+
+1. POSITION
+   Designation: [JOB_POSITION]
+   Department: [DEPARTMENT]
+   Reporting To: [REPORTING_MANAGER]
+   Location: [WORK_LOCATION]
+
+2. COMPENSATION
+   Annual CTC: Rs. [ANNUAL_CTC]
+   Monthly Gross: Rs. [MONTHLY_GROSS]
+   Basic Salary: Rs. [BASIC_SALARY]
+   HRA: Rs. [HRA_AMOUNT]
+   Performance Bonus: [BONUS_DETAILS]
+
+3. JOINING DETAILS
+   Start Date: [JOINING_DATE]
+   Probation Period: [PROBATION_MONTHS] months
+   Working Hours: [WORKING_HOURS]
+   Working Days: [WORKING_DAYS]
+
+4. BENEFITS
+   Annual Leave: [ANNUAL_LEAVE] days
+   Sick Leave: [SICK_LEAVE] days
+   Health Insurance: [HEALTH_INSURANCE]
+   PF Contribution: [PF_CONTRIBUTION]
+
+5. NOTICE PERIOD
+   During Probation: [PROBATION_NOTICE_DAYS] days
+   After Confirmation: [PERMANENT_NOTICE_DAYS] days
+
+Please confirm acceptance by [ACCEPTANCE_DEADLINE].
+
+Sincerely,
+
+[HR_NAME]
+[HR_DESIGNATION]
+[COMPANY_NAME]
+
+Date: [HR_SIGNATURE_DATE]
+
+CANDIDATE ACCEPTANCE:
+I, [CANDIDATE_NAME], accept the above terms.
+
+Signature: ________________
+Date: [CANDIDATE_SIGNATURE_DATE]
+
+Document ID: OFFER/[DOCUMENT_YEAR]/[OFFER_NUMBER]

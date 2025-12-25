@@ -1,0 +1,66 @@
+RESIDENTIAL LEASE AGREEMENT
+
+This Lease Agreement is entered into on [AGREEMENT_DATE] between:
+
+LANDLORD: [LANDLORD_NAME]
+Address: [LANDLORD_ADDRESS]
+PAN: [LANDLORD_PAN]
+
+AND
+
+TENANT: [TENANT_NAME]  
+Address: [TENANT_ADDRESS]
+PAN: [TENANT_PAN]
+Contact: [TENANT_PHONE]
+
+PROPERTY DETAILS:
+Property Address: [PROPERTY_ADDRESS]
+Property Type: [PROPERTY_TYPE]
+Area: [PROPERTY_AREA] sq.ft.
+Furnishing: [FURNISHING_STATUS]
+
+TERMS AND CONDITIONS:
+
+1. LEASE PERIOD
+   Start Date: [LEASE_START_DATE]
+   End Date: [LEASE_END_DATE]
+   Duration: [LEASE_DURATION] months
+
+2. RENT DETAILS
+   Monthly Rent: Rs. [MONTHLY_RENT]
+   Security Deposit: Rs. [SECURITY_DEPOSIT]
+   Maintenance Charges: Rs. [MAINTENANCE_CHARGES] per month
+   Payment Due Date: [RENT_DUE_DATE] of each month
+
+3. PAYMENT METHOD
+   Account Name: [ACCOUNT_NAME]
+   Account Number: [ACCOUNT_NUMBER]
+   Bank Name: [BANK_NAME]
+   IFSC Code: [IFSC_CODE]
+
+4. UTILITIES (Included/Excluded)
+   Electricity: [ELECTRICITY_STATUS]
+   Water: [WATER_STATUS]
+   Gas: [GAS_STATUS]
+   Internet: [INTERNET_STATUS]
+
+5. TERMINATION
+   Notice Period: [NOTICE_PERIOD] days
+   Early Termination Penalty: Rs. [TERMINATION_PENALTY]
+
+6. RESTRICTIONS
+   Pets Allowed: [PETS_ALLOWED]
+   Subletting Allowed: [SUBLETTING_ALLOWED]
+
+SIGNATURES:
+
+Landlord: ________________
+Date: [SIGNATURE_DATE_LANDLORD]
+
+Tenant: ________________
+Date: [SIGNATURE_DATE_TENANT]
+
+Witness 1: [WITNESS1_NAME]
+Witness 2: [WITNESS2_NAME]
+
+Document Reference: LEASE/2024/[DOCUMENT_REFERENCE]
