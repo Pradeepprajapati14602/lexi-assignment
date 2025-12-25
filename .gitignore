@@ -46,4 +46,7 @@ temp/
 *.log
 logs/
 
+# Documentation
+*.md
+
 # Created by UOIONHHC
