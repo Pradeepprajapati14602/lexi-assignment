@@ -50,9 +50,9 @@ app.include_router(chat.router, prefix="/api/chat", tags=["chat"])
 async def startup_event():
     """Initialize database on startup"""
     init_db()
-    print("✅ Database initialized")
-    print(f"🚀 API Server running on http://localhost:{settings.PORT}")
-    print(f"📚 API Docs available at http://localhost:{settings.PORT}/docs")
+    print("Database initialized")
+    print(f"API Server running on http://localhost:{settings.PORT}")
+    print(f"API Docs available at http://localhost:{settings.PORT}/docs")
 
 
 @app.get("/")

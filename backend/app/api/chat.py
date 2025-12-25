@@ -81,7 +81,7 @@ async def handle_draft_request(
     if not all_templates:
         return schemas.ChatResponse(
             conversation_id=conversation_id,
-            message="❌ No templates available. Upload a document first!",
+            message="No templates available. Upload a document first!",
             message_type="no_templates",
             data=None
         )
@@ -105,7 +105,7 @@ async def handle_draft_request(
         conv["state"] = "awaiting_template_selection"
         conv["user_query"] = query
         
-        message = "📋 **Available Templates:**\n\n"
+        message = "**Available Templates:**\n\n"
         for i, t in enumerate(all_templates, 1):
             message += f"{i}. **{t.title}** ({len(t.variables)} variables)\n"
         message += "\nReply with the number to select a template."
@@ -126,7 +126,7 @@ async def handle_draft_request(
         
         return schemas.ChatResponse(
             conversation_id=conversation_id,
-            message=f"✅ **{matched_template.title}**\n\nFound {len(matched_template.variables)} variables.\n\nReply 'yes' to proceed!",
+            message=f"**{matched_template.title}**\n\nFound {len(matched_template.variables)} variables.\n\nReply 'yes' to proceed!",
             message_type="template_match",
             data={"template_id": matched_template.id}
         )
@@ -143,7 +143,7 @@ async def handle_draft_request(
             conv["user_query"] = query
             
             # Build response with match card
-            response_message = f"""📄 **Template Match Found**
+            response_message = f"""**Template Match Found**
 
 **Best Match:** {match_result.best_match.title}
 **Confidence:** {match_result.best_match.confidence:.0%}
@@ -156,7 +156,7 @@ async def handle_draft_request(
                 for alt in match_result.alternatives[:2]:
                     response_message += f"- {alt.title} ({alt.confidence:.0%})\n"
             
-            response_message += "\n✅ Reply with 'yes' to use this template, or select an alternative."
+            response_message += "\n Reply with 'yes' to use this template, or select an alternative."
             
             return schemas.ChatResponse(
                 conversation_id=conversation_id,
@@ -171,7 +171,7 @@ async def handle_draft_request(
     except Exception as e:
         print(f"AI matching failed: {str(e)}")
         # Fallback to showing all templates
-        message = "⚠️ AI matching unavailable. **Available Templates:**\n\n"
+        message = "AI matching unavailable. **Available Templates:**\n\n"
         for i, t in enumerate(all_templates, 1):
             message += f"{i}. **{t.title}** ({len(t.variables)} variables)\n"
         message += "\nReply with the number to select."
@@ -193,7 +193,7 @@ async def handle_draft_request(
     else:
         return schemas.ChatResponse(
             conversation_id=conversation_id,
-            message="❌ No matching template found in the database.\n\n💡 Suggestions:\n- Try uploading a similar document\n- Broaden your request\n- Use different keywords",
+            message="No matching template found in the database.\n\nSuggestions:\n- Try uploading a similar document\n- Broaden your request\n- Use different keywords",
             message_type="no_match",
             data={"has_exa": False}
         )
@@ -212,7 +212,7 @@ async def handle_web_bootstrap(
     if not results:
         return schemas.ChatResponse(
             conversation_id=conversation_id,
-            message="❌ No matching template found locally or on the web.\n\nPlease try:\n- Uploading a document\n- Using different search terms",
+            message="No matching template found locally or on the web.\n\nPlease try:\n- Uploading a document\n- Using different search terms",
             message_type="no_match",
             data={"has_exa": True, "web_results": 0}
         )
@@ -223,7 +223,7 @@ async def handle_web_bootstrap(
     conv["web_results"] = results
     conv["user_query"] = query
     
-    response_message = f"""🌐 **No Local Template Found - Web Search Results**
+    response_message = f""" **No Local Template Found - Web Search Results**
 
 I found {len(results)} similar documents online:
 
@@ -237,7 +237,7 @@ Preview: {result['text'][:150]}...
 
 """
     
-    response_message += "\n✅ Reply with the number (1-3) to create a template from that document."
+    response_message += "\n Reply with the number (1-3) to create a template from that document."
     
     return schemas.ChatResponse(
         conversation_id=conversation_id,
@@ -277,7 +277,7 @@ async def handle_template_selection(
                 
                 return schemas.ChatResponse(
                     conversation_id=conversation_id,
-                    message=f"✅ Created template: **{db_template.title}**\n\nFound {len(db_template.variables)} variables. Let's fill them in!",
+                    message=f" Created template: **{db_template.title}**\n\nFound {len(db_template.variables)} variables. Let's fill them in!",
                     message_type="template_created",
                     data={"template_id": db_template.id}
                 )
@@ -300,7 +300,7 @@ async def handle_template_selection(
             
             return schemas.ChatResponse(
                 conversation_id=conversation_id,
-                message=f"✅ **{selected_template.title}**\n\nFound {len(selected_template.variables)} variables.\n\nReply 'yes' to proceed!",
+                message=f" **{selected_template.title}**\n\nFound {len(selected_template.variables)} variables.\n\nReply 'yes' to proceed!",
                 message_type="template_match",
                 data={"template_id": selected_template.id}
             )
@@ -372,7 +372,7 @@ async def start_questions(
     
     # Ask first question
     first_question = questions[0]
-    response_message = f"""📝 **Let's fill in the details**
+    response_message = f""" **Let's fill in the details**
 
 Pre-filled {len(prefilled)} variables from your request.
 {len(remaining_vars)} questions remaining.
@@ -381,7 +381,7 @@ Pre-filled {len(prefilled)} variables from your request.
 """
     
     if first_question.get('hint'):
-        response_message += f"\n💡 {first_question['hint']}"
+        response_message += f"\n {first_question['hint']}"
     
     return schemas.ChatResponse(
         conversation_id=conversation_id,
@@ -432,13 +432,13 @@ async def handle_answer(
     
     # Ask next question
     next_question = questions[answered_count + 1]
-    response_message = f"""✅ Got it!
+    response_message = f""" Got it!
 
 **Q{answered_count + 2}/{len(questions)}:** {next_question['question']}
 """
     
     if next_question.get('hint'):
-        response_message += f"\n💡 {next_question['hint']}"
+        response_message += f"\n {next_question['hint']}"
     
     return schemas.ChatResponse(
         conversation_id=conversation_id,
@@ -486,7 +486,7 @@ async def generate_draft(
     # Reset conversation state
     conv["state"] = "draft_generated"
     
-    response_message = f"""✅ **Draft Generated Successfully!**
+    response_message = f""" **Draft Generated Successfully!**
 
 ---
 
@@ -554,10 +554,10 @@ def handle_vars_command(
     
     for var in template.variables:
         if var.key in answers:
-            filled.append(f"✅ {var.label}: {answers[var.key]}")
+            filled.append(f" {var.label}: {answers[var.key]}")
         else:
             status = "Required" if var.required else "Optional"
-            missing.append(f"❌ {var.label} ({status})")
+            missing.append(f" {var.label} ({status})")
     
     message = f"""**Variable Status for {template.title}**
 

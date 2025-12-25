@@ -121,11 +121,11 @@ IMPORTANT:
             return result
             
         except json.JSONDecodeError as e:
-            print(f"❌ JSON decode error: {e}")
-            print(f"📄 Response text (first 500 chars): {result_text[:500]}")
+            print(f" JSON decode error: {e}")
+            print(f" Response text (first 500 chars): {result_text[:500]}")
             return {"variables": [], "similarity_tags": []}
         except Exception as e:
-            print(f"❌ Error extracting variables: {e}")
+            print(f" Error extracting variables: {e}")
             import traceback
             traceback.print_exc()
             return {"variables": [], "similarity_tags": []}
